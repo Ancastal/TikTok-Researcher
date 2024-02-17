@@ -14,8 +14,12 @@ pyk.specify_browser('chrome')
 async def search_hashtag(tag):
     async with TikTokApi() as api:
         await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3, headless=False)
-        os.system("clear") if os.name == "posix" else os.system("cls")
         hashtag_obj = api.hashtag(name=tag)
+
+        os.system("clear") if os.name == "posix" else os.system("cls")
+        print("Please, wait a moment...")
+        print("We are processing the hashtag: ", tag)
+
         input_top_search_dialog = input_dialog(
             title='How many videos do you want to search?',
             text='Input number of videos:'
@@ -28,10 +32,13 @@ async def search_hashtag(tag):
 async def save_video_info(video_id, selections):
     async with TikTokApi() as api:
         await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3, headless=False)
-        os.system("clear") if os.name == "posix" else os.system("cls")
 
         video = api.video(id=video_id)
-        stats = await api.video(url=f"https://www.tiktok.com/@whatevs/video/{video_id}").info()
+        stats = await api.video(url=f"https://www.tiktok.com/@user/video/{video_id}").info()
+
+        os.system("clear") if os.name == "posix" else os.system("cls")
+        print("We are processing the video with ID: ", video_id)
+        print("Please, wait a moment...")
 
         info_dict = {}
 
