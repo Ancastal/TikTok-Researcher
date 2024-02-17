@@ -13,6 +13,10 @@ Custom Selections: Offers flexibility by allowing users to select specific piece
 - **User-Friendly Interface**: Incorporates prompt_toolkit to offer an engaging and intuitive user interface, ensuring a seamless user experience for data collection tasks.
 - **Transcription**: Features transcription capabilities utilizing OpenAI's Whisper, allowing for the conversion of video audio into text, broadening the scope of content analysis. Before using the transcription service, please, check its pricing from the [OpenAI Whisper](https://openai.com/research/whisper) website.
 
+## Future Updates
+
+Future updates will present improved search capabilities (by keywords, author, hashtags, trends). Machine translation will also be included from and into any high-resource language.
+
 ## Requirements
 
 - Python 3.6+
