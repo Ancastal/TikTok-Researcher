@@ -196,8 +196,8 @@ if __name__ == "__main__":
         openai_api_key = secrets.get('api', None)
 
     message_dialog(
-        title="TikTok Helper",
-        text="Welcome to TikTok Helper!"
+        title="TikTok Researcher",
+        text="Welcome to TikTok Researcher!"
     ).run()
 
     hashtag = input_dialog(
