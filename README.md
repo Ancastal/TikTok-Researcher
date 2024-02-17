@@ -56,7 +56,7 @@ This program is built using the [TikTokApi](https://github.com/davidteather/TikT
 
 ## License
 
-This program is distributed under the MIT License. See `LICENSE` for more information.
+This program is distributed under the GNU v3.0 License. See `LICENSE` for more information.
 
 ## Contact
 
