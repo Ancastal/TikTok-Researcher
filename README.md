@@ -2,6 +2,8 @@
 
 This Python program is designed to leverage the capabilities of the TikTok API to fetch and save detailed information about videos on TikTok based on hashtags, author details, likes, comments, and more. It provides an efficient way to gather insights from video content and metadata on TikTok, making it easier for researchers, marketers, and content creators to analyze trends, engagement, and content strategies on the platform.
 
+The program was developed in accordance with the requirements requested by a dear friend, for whom this application was developed. Currently, search is only available by hashtag, as that is what was necessary for him to have.
+
 ## Features
 
 - **Hashtag Search**: Utilize hashtags to discover and fetch relevant video content, making it easier to analyze specific trends or topics.
