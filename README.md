@@ -9,7 +9,7 @@ This Python program is designed to leverage the capabilities of the TikTok API t
 Custom Selections: Offers flexibility by allowing users to select specific pieces of information they want to save, tailoring the data collection to specific research needs.
 - **File Saving**: Enables the organized saving of extracted information into text files, facilitating easy access and further analysis.
 - **User-Friendly Interface**: Incorporates prompt_toolkit to offer an engaging and intuitive user interface, ensuring a seamless user experience for data collection tasks.
-- **Transcription**: Features transcription capabilities utilizing OpenAI's Whisper, allowing for the conversion of video audio into text, broadening the scope of content analysis. Before using the transcription service, please, check its pricing from the (OpenAI Whisper)[https://openai.com/research/whisper] website.
+- **Transcription**: Features transcription capabilities utilizing OpenAI's Whisper, allowing for the conversion of video audio into text, broadening the scope of content analysis. Before using the transcription service, please, check its pricing from the [OpenAI Whisper](https://openai.com/research/whisper) website.
 
 ## Requirements
 
@@ -48,7 +48,7 @@ Follow the interactive prompts to enter hashtags, select the number of videos to
 
 The `ms-token` is necessary to retrieve data from the TikTok services. You can retrieve your `ms-token` by going opening a TikTok video in your Chrome browser. From there, open your browser's inspection page and look for `ms-token` by going to the Application tab and then opening TikTok's cookies.
 
-The `openai_api_key` can be retrieved by OpenAI's [official website](https://platform.openai.com/api-keys).
+The `openai_api_key` can be retrieved by OpenAI's [Official Platform](https://platform.openai.com/api-keys).
 
 ## Acknowledgements
 
