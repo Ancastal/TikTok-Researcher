@@ -17,7 +17,9 @@ Custom Selections: Offers flexibility by allowing users to select specific piece
 
 <details>
   <summary>Click for a Video Demonstration</summary>
+  
   https://github.com/Ancastal/TikTok-Researcher/assets/16407222/0b97fd37-2a8f-4ba3-9898-ea150ce635ec
+  
 </details>
 
 ## Requirements
