@@ -13,10 +13,10 @@ Custom Selections: Offers flexibility by allowing users to select specific piece
 - **User-Friendly Interface**: Incorporates prompt_toolkit to offer an engaging and intuitive user interface, ensuring a seamless user experience for data collection tasks.
 - **Transcription**: Features transcription capabilities utilizing OpenAI's Whisper, allowing for the conversion of video audio into text, broadening the scope of content analysis. Before using the transcription service, please, check its pricing from the [OpenAI Whisper](https://openai.com/research/whisper) website.
 
-## Video Demonstration
+## Video Demonstration (Not Comprehensive)
 
 <details>
-  <summary>Click for a Video Demonstration</summary>
+  <summary>Click for a short Video Demonstration</summary>
   
   https://github.com/Ancastal/TikTok-Researcher/assets/16407222/0b97fd37-2a8f-4ba3-9898-ea150ce635ec
   
