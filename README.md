@@ -10,6 +10,8 @@ The program was developed in accordance with the requirements requested by a dea
 - **Video Information**: Comprehensive extraction of video details, including video ID, URL, author username, likes, comments, and hashtags, provides a rich dataset for analysis.
 Custom Selections: Offers flexibility by allowing users to select specific pieces of information they want to save, tailoring the data collection to specific research needs.
 - **File Saving**: Enables the organized saving of extracted information into text files, facilitating easy access and further analysis.
+- **Excel File**: Offers the ability to create an Excel table, containing the data extracted from each video.
+- **Video Download**: Offers the ability to download videos in mp4 format.
 - **User-Friendly Interface**: Incorporates prompt_toolkit to offer an engaging and intuitive user interface, ensuring a seamless user experience for data collection tasks.
 - **Transcription**: Features transcription capabilities utilizing OpenAI's Whisper, allowing for the conversion of video audio into text, broadening the scope of content analysis. Before using the transcription service, please, check its pricing from the [OpenAI Whisper](https://openai.com/research/whisper) website.
 
