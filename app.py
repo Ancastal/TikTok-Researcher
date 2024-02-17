@@ -1,19 +1,34 @@
-from prompt_toolkit.shortcuts import checkboxlist_dialog, input_dialog, message_dialog, yes_no_dialog
-from TikTokApi import TikTokApi
-from openai import OpenAI
-import pyktok as pyk
-import pandas as pd
-from glob import glob
 import asyncio
 import os
 import re
 import yaml
+import pyktok as pyk
+import pandas as pd
+from TikTokApi import TikTokApi
+from openai import OpenAI
+from glob import glob
+
+from prompt_toolkit.shortcuts import (
+    checkboxlist_dialog, input_dialog,
+    message_dialog, yes_no_dialog
+    )
 
 pyk.specify_browser('chrome')
 
 async def search_hashtag(tag, number):
+    """
+    Search for videos associated with a specific hashtag.
+
+    Args:
+        tag (str): The hashtag to search for.
+        number (int): The number of videos to retrieve.
+
+    Returns:
+        list: A list of video IDs associated with the hashtag.
+    """
     async with TikTokApi() as api:
-        await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3, headless=False)
+        await api.create_sessions(ms_tokens=[ms_token], num_sessions=1,
+                                  sleep_after=3, headless=False)
         hashtag_obj = api.hashtag(name=tag)
         os.system("clear") if os.name == "posix" else os.system("cls")
         print("Please, wait a moment...")
@@ -25,8 +40,22 @@ async def search_hashtag(tag, number):
         return video_ids
 
 async def save_video_info(video_id, selections):
+    """
+    Saves the information of a TikTok video to a text file.
+
+    Args:
+        video_id (str): The ID of the TikTok video.
+        selections (list): A list of strings representing the information to be saved.
+
+    Returns:
+        dict: A dictionary containing the selected information.
+
+    Raises:
+        None
+    """
     async with TikTokApi() as api:
-        await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3, headless=False)
+        await api.create_sessions(ms_tokens=[ms_token], num_sessions=1,
+                                  sleep_after=3, headless=False)
 
         video = api.video(id=video_id)
         stats = await api.video(url=f"https://www.tiktok.com/@user/video/{video_id}").info()
@@ -105,12 +134,27 @@ def save_info_dialog(selections):
         ).run()
 
 def download_videos(video_ids, selections, continue_or_exit):
+    """
+    Downloads videos from TikTok based on the provided video IDs.
+
+    Args:
+        video_ids (list): List of video IDs to download.
+        selections (bool): Flag indicating whether to save video info.
+        continue_or_exit (bool): Flag indicating whether to continue downloading more videos.
+
+    Returns:
+        None
+    """
     for video_id in video_ids:
         if selections:
-            asyncio.run(save_video_info(video_id, selections))
+            asyncio.run(
+                save_video_info(video_id, selections)
+                )
 
-        if continue_or_exit == True:
-            pyk.save_tiktok(f'https://www.tiktok.com/@tiktok/video/{video_id}?is_copy_url=1&is_from_webapp=v1', True)
+        if continue_or_exit is True:
+            pyk.save_tiktok(
+                f'https://www.tiktok.com/@tiktok/video/{video_id}?is_copy_url=1&is_from_webapp=v1',
+                True)
             os.system("clear") if os.name == "posix" else os.system("cls")
 
             message_dialog(
@@ -123,10 +167,8 @@ def download_videos(video_ids, selections, continue_or_exit):
                 text="Do you want to download another video?",
             ).run()
 
-            if continue_or_exit == False:
+            if continue_or_exit is False:
                 break
-            else:
-                continue
 
 def save_to_excel_dialog():
     return yes_no_dialog(
@@ -140,7 +182,8 @@ def save_to_excel(hashtag):
     for file in files:
         with open(file, "r") as f:
             lines = f.readlines()
-            data.append({line.split(":")[0]: line.split(":")[1].strip() for line in lines})
+            data.append({line.split(":")[0]: line.split(":")[1].strip()
+                         for line in lines})
 
     df = pd.DataFrame(data)
     df.to_excel(f"{hashtag}_info.xlsx", index=False)
@@ -194,7 +237,7 @@ if __name__ == "__main__":
         text="Do you want to transcribe every video in your folder?",
     ).run()
 
-    if trascribe == True:
+    if trascribe is True:
         client = OpenAI(api_key=openai_api_key)
         videos = glob("*.mp4")
         # ids are numbers, extract them from the file names using regex
@@ -217,5 +260,5 @@ if __name__ == "__main__":
             ).run()
 
     ask_if_excel = save_to_excel_dialog()
-    if ask_if_excel == True:
+    if ask_if_excel is True:
         save_to_excel(hashtag)
