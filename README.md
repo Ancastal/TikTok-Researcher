@@ -58,7 +58,7 @@ Follow the interactive prompts to enter hashtags, select the number of videos to
 
 ## API Token
 
-The `ms-token` is necessary to retrieve data from the TikTok services. You can retrieve your `ms-token` by going opening a TikTok video in your Chrome browser. From there, open your browser's inspection page and look for `ms-token` by going to the Application tab and then opening TikTok's cookies.
+The `ms-token` is necessary to retrieve data from the TikTok services. You can retrieve your `ms-token` by opening a TikTok video in your Chrome browser. From there, open your browser's inspection page and look for `ms-token` by going to the Application tab and then opening TikTok's cookies.
 
 The `openai_api_key` can be obtained from OpenAI's [Official Platform](https://platform.openai.com/api-keys).
 
