@@ -60,6 +60,8 @@ This program is built using the [TikTokApi](https://github.com/davidteather/TikT
 
 - Improved search capabilities (by keywords, author, hashtags, trends)
 - Machine translation from and into any high-resource language.
+- Optimization of the TikTok API library.
+- UI Optimization.
 
 ## License
 
