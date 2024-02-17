@@ -11,20 +11,15 @@ import yaml
 
 pyk.specify_browser('chrome')
 
-async def search_hashtag(tag):
+async def search_hashtag(tag, number):
     async with TikTokApi() as api:
         await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3, headless=False)
         hashtag_obj = api.hashtag(name=tag)
-
         os.system("clear") if os.name == "posix" else os.system("cls")
         print("Please, wait a moment...")
         print("We are processing the hashtag: ", tag)
 
-        input_top_search_dialog = input_dialog(
-            title='How many videos do you want to search?',
-            text='Input number of videos:'
-        ).run()
-        videos = hashtag_obj.videos(count=int(input_top_search_dialog))
+        videos = hashtag_obj.videos(count=number)
 
         video_ids = [video.id async for video in videos]
         return video_ids
@@ -72,13 +67,14 @@ async def save_video_info(video_id, selections):
         return info_dict
 
 
-def collect_video_ids(hashtag):
-    return asyncio.run(search_hashtag(hashtag))
+def collect_video_ids(hashtag, number):
+    return asyncio.run(search_hashtag(hashtag, number))
 
 def input_top_k_dialog():
     return input_dialog(
         title="How many videos do you want to process?",
-        text="Input number of videos:"
+        text="Input number of videos:",
+        default="30"
     ).run()
 
 def select_info_dialog():
@@ -166,7 +162,14 @@ if __name__ == "__main__":
         text="Please enter the hashtag:"
     ).run()
 
-    video_ids = collect_video_ids(hashtag)
+    number = int(input_dialog(
+                title='How many videos do you want to search?',
+                text='Input number of videos:',
+                default="30"
+            ).run()
+        )
+
+    video_ids = collect_video_ids(hashtag, number)
 
     message_dialog("Video IDs collected successfully!",
                "I was able to collect {} video IDs for the hashtag #{}"

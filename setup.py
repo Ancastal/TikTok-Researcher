@@ -24,4 +24,4 @@ with open('secrets.yaml', 'w') as file:
 os.system("clear") if os.name == "posix" else os.system("cls")
 print("Setup is complete!\n")
 print("You can now run the app by executing the following command:")
-print("python app.py")
+print("`python app.py`")
