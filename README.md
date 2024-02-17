@@ -15,7 +15,8 @@ Custom Selections: Offers flexibility by allowing users to select specific piece
 
 ## Future Updates
 
-Future updates will present improved search capabilities (by keywords, author, hashtags, trends). Machine translation will also be included from and into any high-resource language.
+- Improved search capabilities (by keywords, author, hashtags, trends)
+- Machine translation from and into any high-resource language.
 
 ## Requirements
 
