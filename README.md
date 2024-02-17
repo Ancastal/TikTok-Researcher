@@ -11,7 +11,7 @@ The program was developed in accordance with the requirements requested by a dea
 - **File Saving**: Enables the organized saving of extracted information into text files, facilitating easy access and further analysis.
 - **Excel File**: Offers the ability to create an Excel table, containing the data extracted from each video.
 - **Video Download**: Offers the ability to download the videos in mp4 format.
-- **User-Friendly Interface**: Incorporates prompt_toolkit to offer an easy-to-use user interface, ensuring a seamless user experience for data collection tasks.
+- **User-Friendly Interface**: Incorporates prompt_toolkit to deliver an intuitive, easy-to-use user interface.
 - **Transcription**: Features transcription capabilities utilizing OpenAI's Whisper, allowing for the conversion of video audio into text, broadening the scope of content analysis. Before using the transcription service, please, check its pricing from the [OpenAI Whisper](https://openai.com/research/whisper) website.
 
 ## Video Demonstration (Not Comprehensive)
