@@ -1,4 +1,4 @@
-# TikTok Video Information Saver
+# TikTok Researcher
 
 This Python program is designed to leverage the capabilities of the TikTok API to fetch and save detailed information about videos on TikTok based on hashtags, author details, likes, comments, and more. It provides an efficient way to gather insights from video content and metadata on TikTok, making it easier for researchers, marketers, and content creators to analyze trends, engagement, and content strategies on the platform.
 
